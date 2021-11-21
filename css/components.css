@@ -1,0 +1,214 @@
+/* Importing Work Sans Font */
+
+/* light */
+@font-face {
+  font-family: 'work sans';
+  src: url(../fonts/static/light/WorkSans-Light.ttf) format('ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'work sans';
+  src: url(../fonts/static/light/WorkSans-LightItalic.ttf) format('ttf');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* regular */
+@font-face {
+  font-family: 'work sans';
+  src: url(../fonts/static/regular/WorkSans-Regular.ttf) format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'work sans';
+  src: url(../fonts/static/regular/WorkSans-Italic.ttf) format('ttf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* bold */
+@font-face {
+  font-family: 'work sans';
+  src: url(../fonts/static/bold/WorkSans-SemiBold.ttf) format('ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'work sans';
+  src: url(../fonts/static/bold/WorkSans-Bold.ttf) format('ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'work sans';
+  src: url(../fonts/static/bold/WorkSans-ExtraBold.ttf) format('ttf');
+  font-weight:800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'work sans';
+  src: url(../fonts/static/bold/WorkSans-Black.ttf) format('ttf');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Container */
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px){
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* Start Buttons */
+.main-btn {
+  margin: 1rem 0;
+  padding: .50rem 1.25rem;
+  transition: 0.3s;
+  transition-property: transform, box-shadow;
+  font-size: 1rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  border: none;
+  border-radius: .20rem;
+  background-color: var(--main-clr);
+  cursor: pointer;
+}
+
+.main-btn:hover {
+  transform: scale(1.050) translatey(-4px);
+  box-shadow: 1px 3px 4px rgb(0 0 0 / .2);
+}
+
+/* ٍStart Carousal bullets */
+
+.bullets-box {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.bullets-box .bullet {
+  padding: .6rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color .3s;
+  background: var(--light-clr-200);
+  border: 1px solid var(--light-clr-300);
+}
+.bullet.active,
+.bullet:hover {
+  background-color: var(--main-clr);
+}
+
+/* End Carousal bullets */
+
+/* End Buttons */
+
+/* Start Shapes */
+
+.dots-shape {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  z-index: 10;
+}
+
+.dots-shape .dot {
+  width: 6px;
+  height: 6px;
+  margin: .25rem;
+  background-color: var(--main-clr);
+  border-radius: 50%;
+}
+
+.triangle-shape {
+  position: absolute;
+}
+
+.triangle-shape > * {
+  width: 50px;
+  height: 50px;
+}
+
+.triangle-shape .triangle-one {
+  position: absolute;
+  background-color: var(--dark-clr-100);
+  clip-path: polygon(50% 0, 100% 100%, 0% 100%);
+  opacity: 1;
+}
+
+.triangle-shape .triangle-two {
+  position: absolute;
+  top: -5px;
+  left: -10px;
+  background-color: var(--dark-clr-100);
+  clip-path: polygon(50% 0, 100% 100%, 0% 100%);
+  opacity: .9;
+}
+
+.line-shape {
+  position: absolute;
+  width: 3px;
+  height: 120px;
+  background-color: var(--main-clr);
+  border-radius: 2px;
+}
+
+/* End Shapes */
+
+/* Start Section Header */
+
+.section-header {
+  padding: 0 0 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-header h2 {
+  margin-bottom:  1rem;
+  font-size: var(--head-2);
+  text-transform: capitalize;
+  color: var(--dark-clr-200)
+}
+
+.section-header .header-desc p {
+  text-align: center;
+  max-width: 60ch;
+  font-size: .9rem;
+  color: var(--dark-clr-100);
+}
+
+h3.sub-header {
+  margin: .75rem 0;
+  font-size: var(--head-3);
+  color: var(--dark-clr-200);
+}
+
+/* End Section Header */
