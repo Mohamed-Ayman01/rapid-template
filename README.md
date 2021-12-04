@@ -1,4 +1,13 @@
 # rapidTemplate
-used technologies (html, css, js)
+
+## used technologies
+
+> HTML
+
+> CSS
+
+> JS
 
 [live demo](https://mohamed-ayman01.github.io/rapidTemplate/)
+
+![](https://www.awesomescreenshot.com/image/17941578?key=2b8449169de1d88084d07cfa812352eb)
