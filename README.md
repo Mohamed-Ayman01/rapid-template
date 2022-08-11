@@ -1,27 +1,27 @@
 # Rapid Template
 
-> A Nice HTML5 Template
+#### A ` Responsive ` HTML5 Template
 
 ### Implemented Logic
 
-> Nice Fullscreen Navigation On Mobile Screens
+- Nice Fullscreen Navigation On Mobile Screens.
 
-> Images Filter
+- Images Filter.
 
-> Content Slider
+- Content Slider.
 
-> Dropdown Answer Box {Frequently Asked Questions Section}
+- Dropdown Answer Box {Frequently Asked Questions Section}.
 
 ### used technologies
 
-> HTML
+- HTML5.
 
-> CSS
+- CSS3.
 
-> JS
+- JS.
 
-### Link To View
+### Link To View: [live demo](https://mohamed-ayman01.github.io/rapidTemplate/)
 
-> [live demo](https://mohamed-ayman01.github.io/rapidTemplate/)
 
+### Website Design
 ![img](https://mohamed-ayman01.github.io/rapidTemplate/Template%20-%20Rapid.png)
