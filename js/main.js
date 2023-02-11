@@ -7,7 +7,7 @@ window.addEventListener("scroll", () => {
   else navbar.classList.remove("scroll");
 });
 
-// Scroll current to section & Toggle active class in navabr lis 
+// Scroll current to section & Toggle active class in navabr lis
 
 const navbarLis = document.querySelectorAll("nav .links li:not(li.dropdown)");
 const AllnavabrLinks = document.querySelectorAll("nav a");
@@ -46,19 +46,16 @@ showAccountsMenuBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (socialAccountsMenu.classList.contains("visible")) {
-
     socialAccountsMenu.style.transform = "translateY(-15px)";
     socialAccountsMenu.style.opacity = "0";
-    
+
     setTimeout(() => socialAccountsMenu.classList.remove("visible"), 400);
-    
+
     showAccountsMenuIcon.classList.remove("fa-angle-up");
     showAccountsMenuIcon.classList.add("fa-angle-down");
-    
   } else {
-    
     socialAccountsMenu.classList.add("visible");
-    
+
     setTimeout(function () {
       socialAccountsMenu.style.transform = "translateY(0px)";
       socialAccountsMenu.style.opacity = "1";
@@ -66,7 +63,6 @@ showAccountsMenuBtn.addEventListener("click", (e) => {
 
     showAccountsMenuIcon.classList.add("fa-angle-up");
     showAccountsMenuIcon.classList.remove("fa-angle-down");
-  
   }
 });
 
@@ -96,7 +92,6 @@ fullPageNavLinks.forEach((a) => {
 const statusHeadings = document.querySelectorAll(".status-box h3.sub-header");
 const statusSection = document.querySelector(".why-us .status");
 
-
 // ################
 // ################################
 // ################ DEBUG HERE
@@ -104,10 +99,20 @@ const statusSection = document.querySelector(".why-us .status");
 // ################
 
 function increasingNumAnim() {
-  if (window.scrollY >= 3250) {
-  } else {
-    statusHeadings.forEach((el) => {
-      el.innerHTML = "0";
+  if (window.scrollY >= statusSection.getClientRects()[0].top) {
+    statusHeadings.forEach((box) => {
+
+      let index = 0;
+      
+      let loopHandler = setInterval(() => {
+        index += 1;
+        if (+box.getAttribute("data-status") > index) {
+          box.innerHTML = `${index}`;
+        } else {
+          clearInterval(loopHandler)
+        }
+      }, 10)
+        
     });
   }
 }
@@ -209,7 +214,6 @@ document.addEventListener("click", function (e) {
   }
 });
 
-
 // carousal function (enter list of slides & enter list of bullets)
 function bulletsCarousal(listOfBoxes, ListOfBullets) {
   ListOfBullets.forEach((btn) => {
@@ -237,45 +241,52 @@ function bulletsCarousal(listOfBoxes, ListOfBullets) {
 
 // Testimonails Section Carousal
 
-let testimonCarousalBoxes = document.querySelectorAll(".testimonials .carousal .content-box");
-let testimonCarousalBullets = document.querySelectorAll(".testimonials .carousal .bullets-box .bullet");
+let testimonCarousalBoxes = document.querySelectorAll(
+  ".testimonials .carousal .content-box",
+);
+let testimonCarousalBullets = document.querySelectorAll(
+  ".testimonials .carousal .bullets-box .bullet",
+);
 
 bulletsCarousal(testimonCarousalBoxes, testimonCarousalBullets);
 
 // Our Clients Section Carousal
 
 let clientsCarousalBoxes = document.querySelectorAll(".clients .carousal .box");
-let clientsCarousalBullets = document.querySelectorAll(".clients .bullets-box .bullet");
+let clientsCarousalBullets = document.querySelectorAll(
+  ".clients .bullets-box .bullet",
+);
 
 bulletsCarousal(clientsCarousalBoxes, clientsCarousalBullets);
 
 // Frequently Asked Questions Answer Drop Down
 
-let questionBoxes = document.querySelectorAll(".questions-list .question-box .the-question");
-let answerBoxes = document.querySelectorAll(".questions-list .question-box .drop-down");
+let questionBoxes = document.querySelectorAll(
+  ".questions-list .question-box .the-question",
+);
+let answerBoxes = document.querySelectorAll(
+  ".questions-list .question-box .drop-down",
+);
 
-questionBoxes.forEach(questionBox => {
-
+questionBoxes.forEach((questionBox) => {
   questionBox.addEventListener("click", function () {
-
-    answerBoxes.forEach(answerBox => {
-
+    answerBoxes.forEach((answerBox) => {
       if (answerBox.dataset.number === questionBox.dataset.number) {
         if (answerBox.classList.contains("active")) {
           answerBox.style.transform = "scaleY(0) translateX(-50%)";
           setTimeout(() => answerBox.classList.remove("active"), 300);
-          
-          setTimeout(() => questionBox.style.paddingBottom = `0px`, 350);
+
+          setTimeout(() => (questionBox.style.paddingBottom = `0px`), 350);
         } else {
           answerBox.classList.add("active");
-          setTimeout(() => answerBox.style.transform = "scaleY(1) translateX(-50%)", 100);
+          setTimeout(
+            () => (answerBox.style.transform = "scaleY(1) translateX(-50%)"),
+            100,
+          );
 
           questionBox.style.paddingBottom = `${answerBox.clientHeight}px`;
         }
       }
-
     });
-
   });
-
 });
