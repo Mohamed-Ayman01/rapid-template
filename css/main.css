@@ -442,6 +442,7 @@ nav .full-page-nav .social-icons a:hover {
   height: 300px;
   width: 100%;
   background-color: var(--light-clr-100);
+  display: none;
 }
 
 /* End Head Section */
